@@ -30,5 +30,9 @@
     "coffee-script": "^1.12.2",
     "concurrently": "^3.1.0",
     "express": "^4.14.0"
+  },
+  "dependencies": {
+    "express-nunjucks": "^2.1.2",
+    "nunjucks": "^3.0.0"
   }
 }
