@@ -26,6 +26,8 @@ app = express();
 
 app.set("views", __dirname + "/templates");
 
+app.use("/web", express["static"](__dirname + "/web"));
+
 njk = express_nunjucks(app, {
   watch: true,
   noCache: true

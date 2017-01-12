@@ -4,9 +4,10 @@
   "description": "Keep track of those bloodthirsty animals that want my money ",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"node index.js\" \"npm run compile:w\"",
-    "compile": "coffee -bc .",
-    "compile:w": "coffee -bcw ."
+    "serve": "npm run compile | concurrently --kill-others \"npm run compile:w\" \"npm run webpack:w\" \"nodemon index.coffee\"",
+    "compile": "coffee -bc . | webpack",
+    "compile:w": "coffee -bcw .",
+    "webpack:w": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "coffee-script": "^1.12.2",
     "concurrently": "^3.1.0",
     "express": "^4.14.0",
+    "jquery": "^3.1.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {

@@ -20,6 +20,7 @@ pool.on "error", (err) ->
 # Express
 app = express()
 app.set "views", "#{__dirname}/templates"
+app.use "/web", express.static "#{__dirname}/web"
 
 # Nunjucks  64762
 njk = express_nunjucks app,
