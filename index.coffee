@@ -21,7 +21,7 @@ pool.on "error", (err) ->
 app = express()
 app.set "views", "#{__dirname}/templates"
 
-# Nunjucks
+# Nunjucks  64762
 njk = express_nunjucks app,
         watch: true
         noCache: true
@@ -31,7 +31,7 @@ njk = express_nunjucks app,
 app.get "/", (req, res) ->
         pool.connect (err, client, done) ->
                 return console.error "Error fetching client from pool #{err}" if err
-                client.query "SELECT 'Bills Manager' AS msg", (err, res) ->
+                client.query "SELECT 'Bills Manager is online' AS msg", (err, res) ->
                         do done
                         return console.error "Error running query #{err}" if err
                         console.log res.rows[0].msg

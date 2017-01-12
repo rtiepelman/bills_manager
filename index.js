@@ -36,7 +36,7 @@ app.get("/", function(req, res) {
     if (err) {
       return console.error("Error fetching client from pool " + err);
     }
-    return client.query("SELECT 'Bills Manager' AS msg", function(err, res) {
+    return client.query("SELECT 'Bills Manager is online' AS msg", function(err, res) {
       done();
       if (err) {
         return console.error("Error running query " + err);
